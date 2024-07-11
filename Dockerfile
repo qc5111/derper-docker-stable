@@ -1,6 +1,6 @@
 FROM golang:latest AS builder
 WORKDIR /app
-
+RUN go env -w GOPROXY=https://goproxy.cn,direct
 # https://tailscale.com/kb/1118/custom-derp-servers/
 RUN go install tailscale.com/cmd/derper@latest
 
